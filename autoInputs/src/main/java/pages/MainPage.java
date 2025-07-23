@@ -16,15 +16,17 @@ public class MainPage extends AbsBasePage<MainPage>{
     @FindBy(tagName = "h1")
     private WebElement header;
 
+    private String headerEvent = "*//[@class=''header]";
+
     public MainPage clickHeaderEvent() {
-        driver.findElement(By.xpath(headerEvent)).click();
+        $(By.xpath(headerEvent)).click();
         return this;
     }
 
-    private String headerEvent = "*//[@class=''header]";
+
 
     public MainPage clickHeaderTemplate(String... data) {
-        driver.findElement(By.xpath(String.format("//*[@class='%s']", data))).click();
+        $(By.xpath(String.format("//*[@class='%s']", data))).click();
         return this;
     }
 }

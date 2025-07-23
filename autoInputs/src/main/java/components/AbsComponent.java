@@ -43,6 +43,6 @@ public abstract class AbsComponent extends AbsCommon {
     }
 
     public WebElement getComponentEntity() {
-        return driver.findElement(getByComponent());
+        return $(getByComponent());
     }
 }

@@ -3,7 +3,6 @@ package waiters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,7 +18,7 @@ public class Waiter {
         this.driver = driver;
     }
 
-    public boolean waitForCondition(ExpectedCondition<WebElement> condition) {
+    public boolean waitForCondition(ExpectedCondition condition) {
         try {
             new WebDriverWait(driver, Duration.ofSeconds(waiterTimeout));
             return true;
@@ -30,5 +29,9 @@ public class Waiter {
 
     public boolean waitForElementVisible(By locator) {
         return this.waitForCondition(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public boolean waitForElementNotVisible(By locator) {
+        return this.waitForCondition(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
 }
