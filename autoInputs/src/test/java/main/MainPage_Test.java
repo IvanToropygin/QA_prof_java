@@ -1,5 +1,6 @@
 package main;
 
+import components.ProductSlider;
 import extensions.UIExtension;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;
@@ -11,6 +12,9 @@ public class MainPage_Test {
 
     @Inject
     private MainPage mainPage;
+
+    @Inject
+    private ProductSlider productSlider;
 
 
     @Test
